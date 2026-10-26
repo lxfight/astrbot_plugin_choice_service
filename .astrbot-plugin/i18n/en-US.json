@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "display_name": "Choice Service",
+    "short_desc": "Generic model decision and choice service",
+    "desc": "A System One compatible decision service for arbitrary choices, yes/no questions, provider switching, and live statistics."
+  },
+  "config": {
+    "provider": {
+      "description": "Provider preset",
+      "hint": "Choose a known System One compatible endpoint or use a custom one.",
+      "labels": ["TypeSafe", "OpenRouter", "Vercel AI Gateway", "Custom endpoint"]
+    },
+    "language": {
+      "description": "Reply language",
+      "hint": "Applies to chat replies from this plugin.",
+      "labels": ["Follow AstrBot", "简体中文", "English", "日本語", "Русский"]
+    },
+    "api_key": {
+      "description": "API key",
+      "hint": "The key must match the selected provider."
+    },
+    "base_url": {
+      "description": "Endpoint URL",
+      "hint": "Leave blank to use the provider preset. A custom endpoint needs the full System One URL, for example https://api.typesafe.ai/v1/systemone."
+    },
+    "model": {
+      "description": "Model",
+      "hint": "Leave blank to use the provider preset."
+    },
+    "timeout_sec": {
+      "description": "Request timeout (seconds)"
+    }
+  },
+  "views": {
+    "stats": {
+      "title": "Choice Service",
+      "description": "Inspect call volume, success rate, latency, and choice distribution.",
+      "eyebrow": "Decision model",
+      "heading": "Choice Service",
+      "refresh": "Refresh",
+      "reset": "Reset",
+      "totalCalls": "Calls",
+      "successRate": "Success",
+      "avgLatency": "Average latency",
+      "choiceCalls": "Choice calls",
+      "choiceDistribution": "Choice distribution",
+      "runtime": "Runtime",
+      "recent": "Recent decisions",
+      "time": "Time",
+      "kind": "Type",
+      "question": "Question",
+      "result": "Result",
+      "probability": "Probability",
+      "latency": "Latency",
+      "provider": "Provider",
+      "model": "Model",
+      "timeout": "Timeout",
+      "apiKey": "API key",
+      "configured": "Configured",
+      "missing": "Missing",
+      "boolCalls": "Yes/no calls",
+      "failedCalls": "Failed calls",
+      "lastError": "Last error",
+      "kindChoice": "Choice",
+      "kindBool": "Yes/no",
+      "yes": "Yes",
+      "no": "No",
+      "error": "Error",
+      "loading": "Loading…",
+      "loadFailed": "Failed to load statistics",
+      "resetFailed": "Failed to reset statistics",
+      "noChoices": "No choice data yet.",
+      "empty": "No decisions yet.",
+      "confirmReset": "Reset all statistics?",
+      "providers": {
+        "typesafe": "TypeSafe",
+        "openrouter": "OpenRouter",
+        "vercel": "Vercel AI Gateway",
+        "custom": "Custom endpoint"
+      }
+    }
+  },
+  "messages": {
+    "usage": "Usage: /choose question :: option1 | option2",
+    "failed": "Decision failed: {error}",
+    "result": "Choice: {choice}\nProbability: {probability}\nConfidence: {confidence}\nLatency: {latency} ms"
+  }
+}

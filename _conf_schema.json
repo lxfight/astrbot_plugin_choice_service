@@ -1,0 +1,43 @@
+{
+  "provider": {
+    "description": "Provider preset",
+    "type": "string",
+    "default": "typesafe",
+    "options": ["typesafe", "openrouter", "vercel", "custom"],
+    "labels": ["TypeSafe", "OpenRouter", "Vercel AI Gateway", "Custom endpoint"],
+    "hint": "Choose a known System One compatible endpoint or use Custom."
+  },
+  "language": {
+    "description": "Reply language",
+    "type": "string",
+    "default": "auto",
+    "options": ["auto", "zh-CN", "en-US", "ja-JP", "ru-RU"],
+    "labels": ["Follow AstrBot", "简体中文", "English", "日本語", "Русский"],
+    "hint": "Applies to chat replies from this plugin."
+  },
+  "api_key": {
+    "description": "API key",
+    "type": "string",
+    "default": "",
+    "secret": true,
+    "obvious_hint": true,
+    "hint": "The key must match the selected provider."
+  },
+  "base_url": {
+    "description": "Endpoint URL",
+    "type": "string",
+    "default": "",
+    "hint": "Leave blank to use the provider preset. A custom endpoint needs the full System One URL, for example https://api.typesafe.ai/v1/systemone."
+  },
+  "model": {
+    "description": "Model",
+    "type": "string",
+    "default": "",
+    "hint": "Leave blank to use the provider preset."
+  },
+  "timeout_sec": {
+    "description": "Request timeout (seconds)",
+    "type": "float",
+    "default": 10.0
+  }
+}

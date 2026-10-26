@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "display_name": "Choice Service",
+    "short_desc": "通用模型判断与选择服务",
+    "desc": "System One 兼容的通用判断服务，支持任意单选、是非判断、服务商切换与实时统计。"
+  },
+  "config": {
+    "provider": {
+      "description": "服务商预设",
+      "hint": "选择已知的 System One 兼容接口，或使用自定义接口。",
+      "labels": ["TypeSafe", "OpenRouter", "Vercel AI Gateway", "自定义接口"]
+    },
+    "language": {
+      "description": "回复语言",
+      "hint": "仅影响本插件的聊天回复。",
+      "labels": ["跟随 AstrBot", "简体中文", "English", "日本語", "Русский"]
+    },
+    "api_key": {
+      "description": "API Key",
+      "hint": "密钥需要与所选服务商匹配。"
+    },
+    "base_url": {
+      "description": "接口地址",
+      "hint": "留空使用服务商预设；自定义接口需填写完整 System One 地址，例如 https://api.typesafe.ai/v1/systemone。"
+    },
+    "model": {
+      "description": "模型",
+      "hint": "留空使用服务商预设。"
+    },
+    "timeout_sec": {
+      "description": "请求超时（秒）"
+    }
+  },
+  "views": {
+    "stats": {
+      "title": "Choice Service",
+      "description": "查看判断次数、成功率、延迟与选项分布。",
+      "eyebrow": "判断模型",
+      "heading": "Choice Service",
+      "refresh": "刷新",
+      "reset": "重置",
+      "totalCalls": "调用次数",
+      "successRate": "成功率",
+      "avgLatency": "平均延迟",
+      "choiceCalls": "单选调用",
+      "choiceDistribution": "选项分布",
+      "runtime": "运行环境",
+      "recent": "最近判断",
+      "time": "时间",
+      "kind": "类型",
+      "question": "问题",
+      "result": "结果",
+      "probability": "概率",
+      "latency": "延迟",
+      "provider": "服务商",
+      "model": "模型",
+      "timeout": "超时",
+      "apiKey": "API Key",
+      "configured": "已配置",
+      "missing": "未配置",
+      "boolCalls": "是非调用",
+      "failedCalls": "失败次数",
+      "lastError": "最近错误",
+      "kindChoice": "单选",
+      "kindBool": "是非",
+      "yes": "是",
+      "no": "否",
+      "error": "错误",
+      "loading": "加载中…",
+      "loadFailed": "统计加载失败",
+      "resetFailed": "统计重置失败",
+      "noChoices": "暂无选项数据。",
+      "empty": "暂无判断记录。",
+      "confirmReset": "确定重置全部统计？",
+      "providers": {
+        "typesafe": "TypeSafe",
+        "openrouter": "OpenRouter",
+        "vercel": "Vercel AI Gateway",
+        "custom": "自定义接口"
+      }
+    }
+  },
+  "messages": {
+    "usage": "用法：/choose 问题 :: 选项1 | 选项2",
+    "failed": "判断失败：{error}",
+    "result": "选择：{choice}\n概率：{probability}\n置信度：{confidence}\n耗时：{latency} ms"
+  }
+}

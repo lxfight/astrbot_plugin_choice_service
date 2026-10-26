@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Choice Service</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow" data-i18n="eyebrow">Decision model</p>
+          <h1 data-i18n="heading">Choice Service</h1>
+          <p class="endpoint" id="endpoint">—</p>
+        </div>
+        <div class="actions">
+          <button class="secondary" id="refresh" data-i18n="refresh">Refresh</button>
+          <button class="danger" id="reset" data-i18n="reset">Reset</button>
+        </div>
+      </header>
+
+      <p class="status" id="status" role="status"></p>
+
+      <section class="metrics">
+        <article class="metric">
+          <span data-i18n="totalCalls">Calls</span>
+          <strong id="total">0</strong>
+        </article>
+        <article class="metric">
+          <span data-i18n="successRate">Success</span>
+          <strong id="success-rate">0%</strong>
+        </article>
+        <article class="metric">
+          <span data-i18n="avgLatency">Average latency</span>
+          <strong id="avg-latency">0 ms</strong>
+        </article>
+        <article class="metric">
+          <span data-i18n="choiceCalls">Choice calls</span>
+          <strong id="choice-calls">0</strong>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2 data-i18n="choiceDistribution">Choice distribution</h2>
+          <div class="distribution" id="distribution"></div>
+        </article>
+        <article class="panel">
+          <h2 data-i18n="runtime">Runtime</h2>
+          <dl class="runtime" id="runtime"></dl>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="recent">Recent decisions</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="time">Time</th>
+                <th data-i18n="kind">Type</th>
+                <th data-i18n="question">Question</th>
+                <th data-i18n="result">Result</th>
+                <th data-i18n="probability">Probability</th>
+                <th data-i18n="latency">Latency</th>
+              </tr>
+            </thead>
+            <tbody id="recent"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

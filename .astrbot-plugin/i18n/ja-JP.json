@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "display_name": "Choice Service",
+    "short_desc": "汎用モデル判定・選択サービス",
+    "desc": "System One 互換の判断サービス。任意の選択肢、はい/いいえ判定、プロバイダー切り替え、リアルタイム統計に対応します。"
+  },
+  "config": {
+    "provider": {
+      "description": "プロバイダーのプリセット",
+      "hint": "既知の System One 互換エンドポイント、またはカスタムを選択します。",
+      "labels": ["TypeSafe", "OpenRouter", "Vercel AI Gateway", "カスタムエンドポイント"]
+    },
+    "language": {
+      "description": "返信言語",
+      "hint": "このプラグインのチャット返信にのみ適用されます。",
+      "labels": ["AstrBot に従う", "简体中文", "English", "日本語", "Русский"]
+    },
+    "api_key": {
+      "description": "API キー",
+      "hint": "選択したプロバイダーに対応するキーを入力してください。"
+    },
+    "base_url": {
+      "description": "エンドポイント URL",
+      "hint": "空欄ならプリセットを使用します。カスタムの場合は完全な System One URL を入力してください（例：https://api.typesafe.ai/v1/systemone）。"
+    },
+    "model": {
+      "description": "モデル",
+      "hint": "空欄ならプリセットを使用します。"
+    },
+    "timeout_sec": {
+      "description": "リクエストタイムアウト（秒）"
+    }
+  },
+  "views": {
+    "stats": {
+      "title": "Choice Service",
+      "description": "判断回数、成功率、遅延、選択分布を表示します。",
+      "eyebrow": "判断モデル",
+      "heading": "Choice Service",
+      "refresh": "更新",
+      "reset": "リセット",
+      "totalCalls": "呼び出し",
+      "successRate": "成功率",
+      "avgLatency": "平均遅延",
+      "choiceCalls": "選択呼び出し",
+      "choiceDistribution": "選択分布",
+      "runtime": "実行環境",
+      "recent": "最近の判断",
+      "time": "時刻",
+      "kind": "種類",
+      "question": "質問",
+      "result": "結果",
+      "probability": "確率",
+      "latency": "遅延",
+      "provider": "プロバイダー",
+      "model": "モデル",
+      "timeout": "タイムアウト",
+      "apiKey": "API キー",
+      "configured": "設定済み",
+      "missing": "未設定",
+      "boolCalls": "はい/いいえ呼び出し",
+      "failedCalls": "失敗回数",
+      "lastError": "最近のエラー",
+      "kindChoice": "選択",
+      "kindBool": "はい/いいえ",
+      "yes": "はい",
+      "no": "いいえ",
+      "error": "エラー",
+      "loading": "読み込み中…",
+      "loadFailed": "統計の読み込みに失敗しました",
+      "resetFailed": "統計のリセットに失敗しました",
+      "noChoices": "選択データはまだありません。",
+      "empty": "判断はまだありません。",
+      "confirmReset": "すべての統計をリセットしますか？",
+      "providers": {
+        "typesafe": "TypeSafe",
+        "openrouter": "OpenRouter",
+        "vercel": "Vercel AI Gateway",
+        "custom": "カスタムエンドポイント"
+      }
+    }
+  },
+  "messages": {
+    "usage": "使い方：/choose 質問 :: 選択肢1 | 選択肢2",
+    "failed": "判断に失敗しました：{error}",
+    "result": "選択：{choice}\n確率：{probability}\n信頼度：{confidence}\n所要時間：{latency} ms"
+  }
+}

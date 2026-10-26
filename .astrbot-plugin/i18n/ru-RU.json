@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "display_name": "Choice Service",
+    "short_desc": "Универсальный сервис решений и выбора",
+    "desc": "Совместимый с System One сервис решений: произвольные варианты, вопросы да/нет, смена провайдера и статистика в реальном времени."
+  },
+  "config": {
+    "provider": {
+      "description": "Пресет провайдера",
+      "hint": "Выберите известную совместимую с System One конечную точку или укажите свою.",
+      "labels": ["TypeSafe", "OpenRouter", "Vercel AI Gateway", "Своя конечная точка"]
+    },
+    "language": {
+      "description": "Язык ответов",
+      "hint": "Влияет только на ответы этого плагина в чате.",
+      "labels": ["Как в AstrBot", "简体中文", "English", "日本語", "Русский"]
+    },
+    "api_key": {
+      "description": "API-ключ",
+      "hint": "Ключ должен соответствовать выбранному провайдеру."
+    },
+    "base_url": {
+      "description": "URL конечной точки",
+      "hint": "Оставьте пустым для пресета. Для своей точки укажите полный URL System One, например https://api.typesafe.ai/v1/systemone."
+    },
+    "model": {
+      "description": "Модель",
+      "hint": "Оставьте пустым для пресета."
+    },
+    "timeout_sec": {
+      "description": "Таймаут запроса (секунды)"
+    }
+  },
+  "views": {
+    "stats": {
+      "title": "Choice Service",
+      "description": "Количество вызовов, успешность, задержка и распределение вариантов.",
+      "eyebrow": "Модель решений",
+      "heading": "Choice Service",
+      "refresh": "Обновить",
+      "reset": "Сбросить",
+      "totalCalls": "Вызовы",
+      "successRate": "Успешность",
+      "avgLatency": "Средняя задержка",
+      "choiceCalls": "Выборы",
+      "choiceDistribution": "Распределение вариантов",
+      "runtime": "Среда выполнения",
+      "recent": "Последние решения",
+      "time": "Время",
+      "kind": "Тип",
+      "question": "Вопрос",
+      "result": "Результат",
+      "probability": "Вероятность",
+      "latency": "Задержка",
+      "provider": "Провайдер",
+      "model": "Модель",
+      "timeout": "Таймаут",
+      "apiKey": "API-ключ",
+      "configured": "Настроен",
+      "missing": "Не настроен",
+      "boolCalls": "Вызовы да/нет",
+      "failedCalls": "Ошибки",
+      "lastError": "Последняя ошибка",
+      "kindChoice": "Выбор",
+      "kindBool": "Да/нет",
+      "yes": "Да",
+      "no": "Нет",
+      "error": "Ошибка",
+      "loading": "Загрузка…",
+      "loadFailed": "Не удалось загрузить статистику",
+      "resetFailed": "Не удалось сбросить статистику",
+      "noChoices": "Данных о выборе пока нет.",
+      "empty": "Решений пока нет.",
+      "confirmReset": "Сбросить всю статистику?",
+      "providers": {
+        "typesafe": "TypeSafe",
+        "openrouter": "OpenRouter",
+        "vercel": "Vercel AI Gateway",
+        "custom": "Своя конечная точка"
+      }
+    }
+  },
+  "messages": {
+    "usage": "Использование: /choose вопрос :: вариант1 | вариант2",
+    "failed": "Ошибка решения: {error}",
+    "result": "Выбор: {choice}\nВероятность: {probability}\nУверенность: {confidence}\nЗадержка: {latency} ms"
+  }
+}

@@ -1,0 +1,8 @@
+name: astrbot_plugin_choice_service
+display_name: Choice Service
+desc: System One 兼容的通用判断服务，支持任意单选、是非判断、服务商切换与实时统计。
+short_desc: 通用模型判断与选择服务
+version: 0.1.0
+author: lxfight
+repo: https://github.com/lxfight/astrbot_plugin_choice_service
+astrbot_version: ">=4.28.0,<5"
